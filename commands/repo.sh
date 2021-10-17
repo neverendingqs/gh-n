@@ -1,6 +1,10 @@
 #!/bin/bash
 set -eu
 
+# TODO: branch protection, editorconfig, sponsorship
+
+# TODO: setup subcommand, rename "standardize"
+
 case "${1}" in
 standardize)
   gh api repos/{owner}/{repo} \
