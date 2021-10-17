@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-echo ${@:2}
+echo ${@:1}
