@@ -1,17 +1,8 @@
 #!/bin/bash
-set -e
+set -eu
 
 ARGS=${@:2}
+COMMAND=${1}
 DIRNAME=$(dirname ${0})
 
-case "${1}" in
-echo)
-  ${DIRNAME}/commands/echo.sh ${ARGS}
-  ;;
-repo)
-  ${DIRNAME}/commands/repo.sh ${ARGS}
-  ;;
-*)
-  echo "Unsupported command ${1}"
-  ;;
-esac
+${DIRNAME}/commands/${COMMAND}.sh ${ARGS}
