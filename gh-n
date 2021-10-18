@@ -6,10 +6,10 @@ DIRNAME=$(dirname ${0})
 
 case "${1}" in
 echo)
-  ${DIRNAME}/commands/echo.sh "${ARGS}"
+  ${DIRNAME}/commands/echo.sh ${ARGS}
   ;;
 repo)
-  ${DIRNAME}/commands/repo.sh "${ARGS}"
+  ${DIRNAME}/commands/repo.sh ${ARGS}
   ;;
 *)
   echo "Unsupported command ${1}"
