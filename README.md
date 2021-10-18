@@ -1,6 +1,6 @@
 # gh-n
 
-Custom GitHub extension. Probably only useful for me.
+Custom GitHub CLI extension. Probably only useful for me.
 
 ## Template
 
