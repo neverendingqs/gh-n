@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-# TODO: branch protection, editorconfig, sponsorship
+# TODO: sponsorship
 
 DIRNAME=$(dirname ${0})
 
@@ -17,6 +17,14 @@ function set() {
       --method PUT \
       --field branch=${PARAM_0} \
       --input ${DIRNAME}/payload/repo.branch-protection.json
+    ;;
+
+  editorconfig)
+    gh api repos/{owner}/{repo}/contents/.editorconfig \
+      --method PUT \
+      --field message='chore(editorconfig): init' \
+      --field content="$(base64 ${DIRNAME}/payload/repo.editorconfig.editorconfig)" \
+      --field branch=${PARAM_0}
     ;;
 
   merge-button)
