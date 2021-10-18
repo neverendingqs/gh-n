@@ -1,8 +1,6 @@
 #!/bin/bash
 set -eu
 
-# TODO: sponsorship
-
 DIRNAME=$(dirname ${0})
 
 CMD=${1}
@@ -34,6 +32,16 @@ function set() {
       --field allow_merge_commit=false \
       --field allow_rebase_merge=false \
       --field delete_branch_on_merge=true
+    ;;
+
+  sponsorship)
+    gh api repos/{owner}/{repo}/contents/.github/FUNDING.yml \
+      --method PUT \
+      --field message='chore(funding): init' \
+      --field content="$(base64 ${DIRNAME}/payload/repo.sponsorship.FUNDING.yml)" \
+      --field branch=${PARAM_0}
+
+    echo "Sponsorships should be automatically enabled now under 'https://github.com/$(gh repo view --json nameWithOwner --jq .nameWithOwner)/settings'!"
     ;;
 
   *)
