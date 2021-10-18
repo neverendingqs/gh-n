@@ -20,7 +20,7 @@ function set() {
   editorconfig)
     gh api repos/{owner}/{repo}/contents/.editorconfig \
       --method PUT \
-      --field message='chore(editorconfig): init' \
+      --field message='chore(editorconfig): init.' \
       --field content="$(base64 ${DIRNAME}/payload/repo.editorconfig.editorconfig)" \
       --field branch=${PARAM_0}
     ;;
@@ -37,7 +37,7 @@ function set() {
   sponsorship)
     gh api repos/{owner}/{repo}/contents/.github/FUNDING.yml \
       --method PUT \
-      --field message='chore(funding): init' \
+      --field message='chore(funding): init.' \
       --field content="$(base64 ${DIRNAME}/payload/repo.sponsorship.FUNDING.yml)" \
       --field branch=${PARAM_0}
 
