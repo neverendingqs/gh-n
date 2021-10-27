@@ -51,6 +51,11 @@ function set() {
     sponsorship
     ;;
 
+  all-private)
+    editorconfig
+    merge-button
+    ;;
+
   branch-protection)
     branch-protection
     ;;
